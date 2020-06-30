@@ -1,5 +1,7 @@
-# nodeo
+# nodeo (ALPHA)
 ### nodeo is a 24/7 streaming media server that showcases node-based art.
+
+NOTE: This is currently under development.
 
 (*) = on the roadmap but not implemented yet
 (**) = in progress
@@ -43,6 +45,7 @@ You may switch the Active Playlist by pulsing the Activate button
 Segments may also be made Active to an Engine by dragging and dropping
 them onto an Engine Preview, from either a Playlist source or Media source.
 
+## V. Structural Overview
 
 * Nodeo
     1. SRC (Segments/Segment Cycles)
