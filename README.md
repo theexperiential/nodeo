@@ -1,8 +1,8 @@
 # nodeo
 ### nodeo is a 24/7 streaming media server that showcases node-based art.
 
-* = on the roadmap but not implemented yet
-** = in progress
+(*) = on the roadmap but not implemented yet
+(**) = in progress
 	
 ## I. 	Nodeo acts as a train.
 
@@ -44,7 +44,7 @@ Segments may also be made Active to an Engine by dragging and dropping
 them onto an Engine Preview, from either a Playlist source or Media source.
 
 
-*Nodeo
+* Nodeo
     1. SRC (Segments/Segment Cycles)
         * Media
             *Segment Type [Gen, Mov, Trans, etc.]
