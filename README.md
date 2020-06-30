@@ -1,5 +1,7 @@
 # nodeo (ALPHA)
-### nodeo is a 24/7 TouchDesigner media server that streams node-based art.
+### nodeo is a self-curated art gallery for generative artists.
+
+In a nutshell: it's a 24/7 TouchDesigner media server that streams node-based art.
 
 NOTE: This is currently under development.
 
