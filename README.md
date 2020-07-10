@@ -1,6 +1,6 @@
 ![Nodeo Logo](/nodeo/src/img/nodeo-logo.svg)
 # :framed_picture: :bulb: nodeo
-### A generative art gallery for new media artists :man_artist: :woman_artist:
+### A generative art gallery for everyone
 
 :pencil2: This is a Public Alpha *under active development* 
 
