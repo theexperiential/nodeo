@@ -4,18 +4,23 @@
 
 ![Nodeo Screenshot](/nodeo/src/img/nodeo-capture.png)
 
-:pencil2: Public Alpha; Under Active Development
+:pencil2: This is a Public Alpha *under active development* 
 
 :floppy_disk: TouchDesigner 2020.**24520** \
 :desktop_computer: Windows 10 64-bit
 
+---
 
 #### :film_projector: Why I am building this
 I am building nodeo to solve the problem of playing many generative scenes for  streams, permanent installations and live events. The aim is a stable, aesthetic and customizable 24/7 delivery of TouchDesigner components and Notch blocks to external displays and/or apps/platforms (such as OBS/Twitch) via NDI. 
 
 The name is a combination of *node* and *video,* as a good share of generative art is created in node-based environments.
 
-### Releases
+#### :book: How to use
+
+Download or clone the entire repo. Inside of the nodeo/server folder is the nodeo main toe file. Open it on a reasonably powerful computer. (Windows i7 / GTX 1080 eq. or better Desktop is recommended)
+
+### :mailbox_with_mail: Releases
 
 #### 2020.5.225
 * Overhauled Engine + composite system so it is separately threaded from the UI. This greatly improves performance and enables UI interactions without impacting NDI output frame rates.
@@ -27,7 +32,7 @@ The name is a combination of *node* and *video,* as a good share of generative a
 #### 2020.2.2180
 * Initial public release
 
-### System Outline
+### :sparkle: System Outline
 (*) = *on the roadmap but not implemented yet* \
 (**) = *in progress*
 	
@@ -70,7 +75,7 @@ You may switch the Active Playlist by pulsing the Activate button
 Segments may also be made Active to an Engine by dragging and dropping
 them onto an Engine Preview, from either a Playlist source or Media source.
 
-### Structural Overview
+### :cinema: Structural Overview
 
 * Nodeo
     1. SRC (Segments/Segment Cycles)
@@ -108,4 +113,4 @@ them onto an Engine Preview, from either a Playlist source or Media source.
         * AudioLevels
             Basic audio monitoring
 
-Full documentation is in progress.
+:radioactive: Full documentation is in progress.
