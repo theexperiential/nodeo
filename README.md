@@ -1,4 +1,4 @@
-![Nodeo Logo](/nodeo/src/img/nodeo-logo.svg)
+![Nodeo Logo](/src/img/nodeo-logo.svg)
 # :framed_picture: + :bulb: = nodeo
 ### A generative art gallery for everyone
 
@@ -9,7 +9,7 @@
 
 ---
 
-![Nodeo Screenshot](/nodeo/src/img/nodeo-capture.png)
+![Nodeo Screenshot](/src/img/nodeo-capture.png)
 
 ---
 
