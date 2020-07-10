@@ -125,6 +125,8 @@ Many thanks to the following devs and artists for their contributions, which mad
 
 * [Derivative](https://derivative.ca)
 * [Elburz](https://interactiveimmersive.io)
+* [paketa12](https://patreon.com/paketa12)
+* [Alpha Moonbase](https://alphamoonbase.de/)
 * [Richard](https://github.com/Richard-Burns)
 * [Vasily](https://github.com/Ajasra)
 * [Anita](https://anitakucharczyk.com)
