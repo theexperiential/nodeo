@@ -1,14 +1,37 @@
-# nodeo (ALPHA)
-### nodeo is a self-curated art gallery for generative artists.
+![Nodeo Logo](/nodeo/src/img/nodeo-logo.svg)
+# :framed_picture: :bulb: nodeo
+### A generative art gallery for new media artists :man_artist: :woman_artist:
 
-In a nutshell: it's a 24/7 TouchDesigner media server that streams node-based art.
+![Nodeo Screenshot](/nodeo/src/img/nodeo-capture.png)
 
-NOTE: This is currently under development.
+:pencil2: Public Alpha; Under Active Development
 
-(*) = on the roadmap but not implemented yet
-(**) = in progress
+:floppy_disk: TouchDesigner 2020.**24520** \
+:desktop_computer: Windows 10 64-bit
+
+
+#### :film_projector: Why I am building this
+I am building nodeo to solve the problem of playing many generative scenes for  streams, permanent installations and live events. The aim is a stable, aesthetic and customizable 24/7 delivery of TouchDesigner components and Notch blocks to external displays and/or apps/platforms (such as OBS/Twitch) via NDI. 
+
+The name is a combination of *node* and *video,* as a good share of generative art is created in node-based environments.
+
+### Releases
+
+#### 2020.5.225
+* Overhauled Engine + composite system so it is separately threaded from the UI. This greatly improves performance and enables UI interactions without impacting NDI output frame rates.
+* Many minor bug fixes
+* Various minor improvements
+* Blackout button improved (thanks @drmbt)
+* Audio options expanded (thanks @drmbt)
+
+#### 2020.2.2180
+* Initial public release
+
+### System Outline
+(*) = *on the roadmap but not implemented yet* \
+(**) = *in progress*
 	
-## I. 	Nodeo acts as a train.
+#### I. 	Nodeo acts as a train.
 
 It has four engine (COMP) cars.
 
@@ -17,7 +40,7 @@ and a separate Snd Base COMP that processes audio.
 
 An Engineer (Base COMP) drives the train.
 
-## II. Segments act as train cars.
+#### II. Segments act as train cars.
 
 Each carries a temporal fragments of a type of media.
 
@@ -32,14 +55,14 @@ Segment Types/Sub-types:
 3. Audio (wav, aiff and stream) 
 4. Text*
     
-## III. A Segment Cycle acts as triad of connected train cars.
+#### III. A Segment Cycle acts as triad of connected train cars.
 
 Three segments make up a Segment Cycle:
 Video (Gen/Mov/Stream), Transition (Gen/Mov), and Audio.
 
 Each row in a Playlist is considered a Segment Cycle.
 
-## IV. An Active Playlist acts as Conductor of the train.
+#### IV. An Active Playlist acts as Conductor of the train.
 
 You may switch the Active Playlist by pulsing the Activate button 
 (a small white play button directly to the right of the playlist tabs). 
@@ -47,7 +70,7 @@ You may switch the Active Playlist by pulsing the Activate button
 Segments may also be made Active to an Engine by dragging and dropping
 them onto an Engine Preview, from either a Playlist source or Media source.
 
-## V. Structural Overview
+### Structural Overview
 
 * Nodeo
     1. SRC (Segments/Segment Cycles)
@@ -84,3 +107,5 @@ them onto an Engine Preview, from either a Playlist source or Media source.
             Basic audio playback controls
         * AudioLevels
             Basic audio monitoring
+
+Full documentation is in progress.
