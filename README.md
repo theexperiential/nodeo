@@ -14,7 +14,7 @@
 ---
 
 #### :film_projector: Why I am building this
-I am building nodeo to solve the problem of playing many generative scenes for  streams, permanent installations and live events. The aim is a stable, aesthetic and customizable 24/7 delivery of TouchDesigner components and Notch blocks to external displays and/or apps/platforms (such as OBS/Twitch) via NDI. 
+I am building nodeo to enable artists to display an unlimited number of generative scenes for streams, permanent installations and live events. The aim is a stable, aesthetic and customizable 24/7 delivery of TouchDesigner components and Notch blocks to external displays and/or apps/platforms (such as OBS/Twitch) via NDI. 
 
 The name is a combination of *node* and *video,* as a good share of generative art is created in node-based environments.
 
