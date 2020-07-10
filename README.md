@@ -22,6 +22,8 @@ The name is a combination of *node* and *video,* as a good share of generative a
 
 Download or clone the entire repo. Inside of the [server](/server) folder is the nodeo main toe file. Open it on a reasonably powerful computer. (Windows i7 / GTX 1080 eq. or better Desktop is recommended)
 
+---
+
 ### :mailbox_with_mail: Releases
 
 #### 2020.5.227
@@ -33,6 +35,8 @@ Download or clone the entire repo. Inside of the [server](/server) folder is the
 
 #### 2020.2.2180
 * Initial public release
+
+---
 
 ### :sparkle: System Outline
 (*) = *on the roadmap but not implemented yet* \
