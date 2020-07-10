@@ -2,12 +2,14 @@
 # :framed_picture: :bulb: nodeo
 ### A generative art gallery for new media artists :man_artist: :woman_artist:
 
-![Nodeo Screenshot](/nodeo/src/img/nodeo-capture.png)
-
 :pencil2: This is a Public Alpha *under active development* 
 
 :floppy_disk: TouchDesigner 2020.**24520** \
 :desktop_computer: Windows 10 64-bit
+
+---
+
+![Nodeo Screenshot](/nodeo/src/img/nodeo-capture.png)
 
 ---
 
