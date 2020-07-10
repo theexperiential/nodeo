@@ -1,5 +1,5 @@
 ![Nodeo Logo](/nodeo/src/img/nodeo-logo.svg)
-# :framed_picture: :bulb: nodeo
+# :framed_picture: + :bulb: = nodeo
 ### A generative art gallery for everyone
 
 :pencil2: This is a Public Alpha *under active development* 
@@ -16,15 +16,15 @@
 #### :film_projector: Why I am building this
 I am building nodeo to enable everyone to display and/or perform an unlimited number of generative scenes for their streams, permanent installations and live events. The aim is stable, aesthetic and customizable 24/7 delivery of TouchDesigner components and Notch blocks to external displays and/or apps/platforms (such as OBS/Twitch) via NDI. 
 
-The name is a combination of *node* and *video,* as a good share of generative art is created in node-based environments.
+The name is a combination of *node* and *video,* as a good share of generative artwork is created in node-based environments.
 
 #### :book: How to use
 
-Download or clone the entire repo. Inside of the nodeo/server folder is the nodeo main toe file. Open it on a reasonably powerful computer. (Windows i7 / GTX 1080 eq. or better Desktop is recommended)
+Download or clone the entire repo. Inside of the [server](/server) folder is the nodeo main toe file. Open it on a reasonably powerful computer. (Windows i7 / GTX 1080 eq. or better Desktop is recommended)
 
 ### :mailbox_with_mail: Releases
 
-#### 2020.5.225
+#### 2020.5.227
 * Overhauled Engine + composite system so it is separately threaded from the UI. This greatly improves performance and enables UI interactions without impacting NDI output frame rates.
 * Many minor bug fixes
 * Various minor improvements
