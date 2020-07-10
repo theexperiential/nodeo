@@ -115,4 +115,14 @@ them onto an Engine Preview, from either a Playlist source or Media source.
         * AudioLevels
             Basic audio monitoring
 
+### Credits
+
+Many thanks to the following devs and artists for their contributions, which made nodeo possible:
+
+* [Derivative](https://derivative.ca)
+* [Elburz](https://interactiveimmersive.io)
+* [Richard](https://github.com/Richard-Burns)
+* [Vasily](https://github.com/Ajasra)
+* [Anita](https://anitakucharczyk.com)
+
 :radioactive: Full documentation is in progress.
