@@ -6,7 +6,8 @@ BACKLOG
 =======
 
 ------------------------------------------------------------
-Content
+
+Content ()
 
 X paintWaves not loading
 X dystopiaStudy not loading
@@ -20,7 +21,7 @@ X thumbnails for transitions
 
 COMP ()
 
-- occasional GLSL flicker on output still (fixed?)
+X occasional GLSL flicker on output still (fixed?)
 - call SetNames() when adding/removing items from playlist
 - timer needs fixes for transition timing
 
@@ -31,14 +32,22 @@ UI ()
 
 -media src
 	- fix search bug (drop onto playlist from search fails index reCalc)
+		add character-by-character search
 	- movie thumbnail generator has issues inside of Engine COMP
 	X update durations
+	- if dragging > total num items than playlister into playlister, ignore items after ==
 
 -playlist src
 	X parse transitions
 	- parse audio
 	X update durations
 	- update trans durations
+
+	- make seg len unit (sec/min) global: affects both playlister and medialister
+	
+	- if playlist is changes length, confirm 
+		that current position has number after it. if not, reset to 0.
+		if cleared, always reset to zero.
 
 -audio player
 	X play/pause

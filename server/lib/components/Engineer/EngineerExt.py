@@ -235,6 +235,10 @@ class Engineer:
 			self.timerSegments[2,0] = self.myOp.par.Transitiontotalsec * self.timer.par.speed
 		elif segment == 'content':
 			duration = self.myOp.fetch('segment_interval')
+			# if empty duration is returned, default to seg length
+			if not duration:
+				duration = self.myOp.par.Segmentinterval
+
 			engineNumber = self.myOp.fetch('current_engine_number')
 			
 			if self.switchType == 'sec':
@@ -338,12 +342,12 @@ class Engineer:
 			# TO-DO: add a tickline that slides left to right as duration progresses
 			# self.playLister.par.Selectedrows = index
 
-			if engineNumber is not 3:
+			if engineNumber is not 3 and not self.myOp.fetch('manual_drop'):
 				#update current playing segment (row)
 				self.playlists.par.Activesegmentrow = index
 				self.myOp.store('current_index', index)
 
-				# storage of duration for current interval
+				# store duration for current interval
 				self.myOp.store('segment_interval', name[0,1])
 
 			# set previous index

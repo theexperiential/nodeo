@@ -74,3 +74,10 @@ class MediaExt:
 
 	def UpdateSegmentLength(self, length):
 		return
+
+	def KeepDuration(self, row):
+		inDat = self.mediaLister.par.Inputtabledat
+		dur = op(inDat).op('../duration')
+		print(row)
+		dur[row, 0] = 0.0
+		parent.gui.par.Refreshmedialister.pulse()

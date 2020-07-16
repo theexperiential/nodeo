@@ -26,6 +26,11 @@ Download or clone the entire repo. Inside of the [server](/server) folder is the
 
 ### :mailbox_with_mail: Releases
 
+#### 2020.5.246
+
+* Duration handling improvements
+* Minor bug fixes
+
 #### 2020.5.227
 * Overhauled Engine + composite system so it is separately threaded from the UI. This greatly improves performance and enables UI interactions without impacting NDI output frame rates.
 * Many minor bug fixes
@@ -125,10 +130,11 @@ Many thanks to the following devs and artists for their contributions, which mad
 
 * [Derivative](https://derivative.ca)
 * [Elburz](https://interactiveimmersive.io)
+* [Tim Franklin](https://github.com/franklin113)
 * [paketa12](https://patreon.com/paketa12)
 * [Alpha Moonbase](https://alphamoonbase.de/)
 * [Richard Burns](https://github.com/Richard-Burns)
 * [Vasily](https://github.com/Ajasra)
-* [Anita](https://anitakucharczyk.com)
+* [Panda](https://anitakucharczyk.com)
 
 :radioactive: Full documentation is in progress.

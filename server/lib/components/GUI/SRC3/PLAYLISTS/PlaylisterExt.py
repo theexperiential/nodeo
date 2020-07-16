@@ -15,6 +15,7 @@ class PlaylisterExt:
 	def __init__(self, ownerComp):
 		self.myOp = ownerComp
 		self.media = parent.gui.op('SRC3/MEDIA')
+		self.activeMedia = self.media.op('active')
 
 		self.Playlists = op('Playlists')
 		self.playlist = op('in')
@@ -151,9 +152,13 @@ class PlaylisterExt:
 
 			indices = sorted(indices, reverse=True)
 			for i in indices:
-				vidName = op(srcDat)[i, 'name']
-				vidPath = op(srcDat)[i, 'path']
-				vidDur = op(srcDat)[i, 'duration']
+				vidName = op(srcDat)[i, 'Name']
+				vidPath = op(srcDat)[i, 'Path']
+				vidDur = op(srcDat)[i, 'Duration']
+				# if no vid dur is assigned, set it to the current segment interval
+				if not vidDur:
+					vidDur = op.Engineer.par.Segmentinterval
+
 				self.playlist.appendRow( \
 					[vidName, vidDur, transName, transDur, sndName, sndDur, 'x', \
 					 vidPath, transPath, sndPath], dropPos)
@@ -161,9 +166,9 @@ class PlaylisterExt:
 	def replaceCellsInRow(self, mediaType, srcDat, indices, dropPos):
 		for i in indices:
 			dropPos += 1
-			self.playlist[dropPos, '{}Name'.format(mediaType)] = op(srcDat)[i, 'name']
-			self.playlist[dropPos, '{}Path'.format(mediaType)] = op(srcDat)[i, 'path']
-			self.playlist[dropPos, '{}Dur'.format(mediaType)] = op(srcDat)[i, 'duration']
+			self.playlist[dropPos, '{}Name'.format(mediaType)] = op(srcDat)[i, 'Name']
+			self.playlist[dropPos, '{}Path'.format(mediaType)] = op(srcDat)[i, 'Path']
+			self.playlist[dropPos, '{}Dur'.format(mediaType)] = op(srcDat)[i, 'Duration']
 
 	def PreDrop(self):
 		if self.myOp.par.Dropinsertorreplace:
@@ -172,7 +177,8 @@ class PlaylisterExt:
 			self.playlister.par.Drophighlight = 1 # above row
 
 	def Drop(self, srcLister, dropPos):
-		srcDat = op(str(srcLister)).par.Inputtabledat
+		# table to reference from
+		srcDat = self.activeMedia
 
 		# need to redo this for when search is active; rows get messed up. maybe search by row name via dat?
 		#===================================

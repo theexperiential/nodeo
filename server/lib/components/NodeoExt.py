@@ -104,10 +104,24 @@ class Nodeo:
 		# external refs
 		self.params = self.Engineer.op('timer/params')
 
+	def AbortSequence(self):
+		for i in range(1,5):
+			setattr(self.quadHeading.par, 'Engine{}tox'.format(i), self.myOp.par.Defaulttox)
+
 	def IgnitionSequence(self):
+		# start with quad heading off
+		self.quadHeading.par.power = 0
+
 		# don't cook the templates!
 		for operator in self.External.findChildren(type=COMP, depth=1):
 			operator.allowCooking = False
+
+		# re-launch quad heading engine (this is a stability patch, hopefully fixed in future TD build)
+		powerOnEngine = "op('quad_heading').par.power = 1"
+		reloadEngine = "op('quad_heading').par.reload.pulse()"
+
+		run(powerOnEngine, delayFrames = 3 * me.time.rate) # power on
+		run(reloadEngine, delayFrames = 4 * me.time.rate) # reload
 
 		# inform nodeo that it has just been intialized
 		self.myOp.store('armed_for_playback', True)
