@@ -1,8 +1,8 @@
 ![Nodeo Logo](/src/img/nodeo-logo.svg)
 # :framed_picture: + :bulb: = nodeo
-### A generative art gallery for everyone
+### A media server for TouchDesigner developers and enthusiasts
 
-:pencil2: This is a Public Alpha *under active development* 
+:pencil2: This is a Public Alpha *under somewhat active development* 
 
 :floppy_disk: TouchDesigner 2020.**24520** \
 :desktop_computer: Windows 10 64-bit
@@ -13,8 +13,8 @@
 
 ---
 
-#### :film_projector: Why I am building this
-I am building nodeo to enable everyone to display and/or perform an unlimited number of generative scenes for their streams, permanent installations and live events. The aim is stable, aesthetic and customizable 24/7 delivery of TouchDesigner components and Notch blocks to external displays and/or apps/platforms (such as OBS/Twitch) via NDI. 
+#### :film_projector: Why we are building this
+We designed nodeo to be a simple interactive playback solution for livestreams, permanent installations and events. The aim is stable, aesthetic and customizable 24/7 delivery of TouchDesigner components, movies and Notch blocks to external displays and/or apps/platforms (such as OBS/Twitch) via NDI. 
 
 The name is a combination of *node* and *video,* as a good share of generative artwork is created in node-based environments.
 
