@@ -4,7 +4,7 @@
 
 :pencil2: This is a Public Alpha *under somewhat active development* 
 
-:floppy_disk: TouchDesigner 2020.**24520** \
+:floppy_disk: TouchDesigner 2021.**10330** \
 :desktop_computer: Windows 10 64-bit
 
 ---
