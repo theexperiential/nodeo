@@ -6,7 +6,6 @@ class QuadHeadingExt:
 		# internal refs
 		self.myOp = parent()
 		self.extension = self.myOp.op('ext')
-		self.start = self.myOp.op('start_your_engines')
 		self.engines = self.myOp.findChildren(type=engineCOMP, depth=1)
 		self.inComp = self.myOp.op('in_comp')
 		self.textport = self.myOp.op('fifo1')
@@ -22,7 +21,7 @@ class QuadHeadingExt:
 	def AbortSequence(self):
 		# turn all engines off
 		for engine in self.engines:
-			engine.par.power = 0
+			engine.par.play = 0
 			#self.textport.appendRow(['abort', engine])
 
 		# clear any errors from previous session / alternate engine
@@ -31,36 +30,24 @@ class QuadHeadingExt:
 	def IgnitionSequence(self):
 		# start engines
 		for engine in self.engines:
-			engine.par.power = 0
-
-			self.textport.appendRow(['pre', engine.par.file])
-
+			engine.par.play = 0
 			engine.par.file = 'stator.tox'
+			engine.par.initialize.pulse()
+			run(f"op('{engine}').par.play = 1", delayFrames = 1 * me.time.rate)
 
-			self.textport.appendRow(['post', engine.par.file])
 
-			#engine.par.file.expr = "op('Filer').par.Relfilepath0" #'stator.tox' #self.myOp.par.Statortox
-
-			engineNumber = tdu.digits(engine)
-			self.start.run(engine, 0, delayFrames = engineNumber * me.time.rate) # power on
-			self.start.run(engine, 1, delayFrames = (engineNumber + 0.5) * me.time.rate) # reload
-			
 	def ReloadEngine(self, engine):
 		op('engine' + str(engine)).par.reload.pulse()
 
 	def ClearEngine(self, engineNumber):
 		op('engine' + str(engineNumber)).par.Tox = self.getFolderPath('defaulttox')
 
-	def UpdateEngine(self, engineNumber):
-		engineComp = op('engine' + str(engineNumber))
-		
-
-		#self.textport.appendRow(['ok', engineComp.par.Tox])
+	def UpdateEngine(self, engineComp):
+		engineNumber = engineComp.digits
 
 		# connect engine outputs
 		engineComp.outputConnectors[0].connect(op('out' + str(engineNumber)).inputConnectors[0])
 		engineComp.outputConnectors[0].connect(op('comp').inputConnectors[engineNumber - 1])
-		engineComp.outputConnectors[1].connect(op('rename' + str(engineNumber)).inputConnectors[0])
 
 		engineComp.par.Medium = getattr(parent().par, 'Engine{}medium'.format(engineNumber))
 		engineComp.par.Tox = getattr(parent().par, 'Engine{}tox'.format(engineNumber))

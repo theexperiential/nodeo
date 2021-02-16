@@ -95,11 +95,7 @@ class Nodeo:
 		self.Engineer = self.myOp.op('Engineer')
 		self.Comp = self.myOp.op('comp')
 		self.External = self.myOp.op('external')
-
-		self.quadHeading = self.myOp.op('quad_heading')
-		
-		self.start = self.myOp.op('start_your_engines')
-		self.engines = self.myOp.findChildren(type=engineCOMP, depth=1)
+		self.quadHeading = self.myOp.op('engine_quad_heading')
 
 		# external refs
 		self.params = self.Engineer.op('timer/params')
@@ -110,18 +106,15 @@ class Nodeo:
 
 	def IgnitionSequence(self):
 		# start with quad heading off
-		self.quadHeading.par.power = 0
+		self.quadHeading.par.play = 0
 
 		# don't cook the templates!
 		for operator in self.External.findChildren(type=COMP, depth=1):
 			operator.allowCooking = False
 
-		# re-launch quad heading engine (this is a stability patch, hopefully fixed in future TD build)
-		powerOnEngine = "op('quad_heading').par.power = 1"
-		reloadEngine = "op('quad_heading').par.reload.pulse()"
-
-		run(powerOnEngine, delayFrames = 3 * me.time.rate) # power on
-		run(reloadEngine, delayFrames = 4 * me.time.rate) # reload
+		# initialize quad heading engine
+		run("op('engine_quad_heading').par.play = 1", delayFrames = 3 * me.time.rate)
+		run("op('engine_quad_heading').par.initialize.pulse()", delayFrames = 4 * me.time.rate)
 
 		# inform nodeo that it has just been intialized
 		self.myOp.store('armed_for_playback', True)

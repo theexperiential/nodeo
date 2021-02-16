@@ -12,7 +12,7 @@ class Engineer:
 	def __init__(self, ownerComp):
 		self.myOp = ownerComp
 
-		self.quadHeading = parent.Nodeo.op('quad_heading')
+		self.quadHeading = parent.Nodeo.op('engine_quad_heading')
 
 		# pars
 		self.switchType = self.myOp.fetch('segment_unit')
