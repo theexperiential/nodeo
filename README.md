@@ -26,6 +26,10 @@ Download or clone the entire repo. Inside of the [server](/server) folder is the
 
 ### :mailbox_with_mail: Releases
 
+### 2021.0.8
+
+* Updated Engine COMP Implementation to better support the new 2021 TD release.
+
 #### 2020.5.246
 
 * Duration handling improvements
