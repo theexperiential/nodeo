@@ -12,7 +12,7 @@ class Engineer:
 	def __init__(self, ownerComp):
 		self.myOp = ownerComp
 
-		self.quadHeading = parent.Nodeo.op('engine_quad_heading')
+		self.quadHeading = parent.nodeo.op('engine_quad_heading')
 
 		# pars
 		self.switchType = self.myOp.fetch('segment_unit')
@@ -21,7 +21,7 @@ class Engineer:
 		self.duet = self.myOp.par.Duet
 		self.pip = self.myOp.par.Pip
 	
-		self.engine4 = parent.Nodeo.op('engine4')
+		self.engine4 = parent.nodeo.op('engine4')
 
 		self.engineMov = self.myOp.op('engine_Mov')
 
@@ -60,7 +60,7 @@ class Engineer:
 		self.trans = self.myOp.op('../comp/glsl_mattes_trans')
 
 		# GUI
-		self.gui = parent.Nodeo.op('GUI')
+		self.gui = parent.nodeo.op('GUI')
 		self.deck = self.gui.op('PAR4/VIDEO_BAR/ABBA')
 		self.duip = self.gui.op('PAR4/VIDEO_BAR/DUIP')
 
@@ -94,7 +94,7 @@ class Engineer:
 		self.myOp.op('storage_init').run()
 
 		# blackout output
-		parent.Nodeo.par.Output = False
+		parent.nodeo.par.Output = False
 
 		# reset for init playback
 		self.timer.par.initialize.pulse()
@@ -111,9 +111,9 @@ class Engineer:
 		self.timer.par.start.pulse()
 		
 		# enable output if disabled
-		parent.Nodeo.par.Output = True
+		parent.nodeo.par.Output = True
 
-		parent.Nodeo.store('armed_for_playback', False)
+		parent.nodeo.store('armed_for_playback', False)
 
 	def matchFractionIndex(self, val):
 		# this fixes the pairing so that the correct
@@ -342,7 +342,7 @@ class Engineer:
 			# TO-DO: add a tickline that slides left to right as duration progresses
 			# self.playLister.par.Selectedrows = index
 
-			if engineNumber is not 3 and not self.myOp.fetch('manual_drop'):
+			if engineNumber != 3 and not self.myOp.fetch('manual_drop'):
 				#update current playing segment (row)
 				self.playlists.par.Activesegmentrow = index
 				self.myOp.store('current_index', index)
@@ -358,7 +358,7 @@ class Engineer:
 		# add names to pars for gui refs
 		self.SetNames(timeslot, engineNumber, index)
 
-		if engineNumber is not 3:
+		if engineNumber != 3:
 			# update timer duration
 			self.UpdateTimerLength('content')
 
@@ -479,7 +479,7 @@ class Engineer:
 
 
 	def ClearTrans(self):
-		self.quadHeading.par.Engine4tox = parent.Nodeo.par.Defaulttox
+		self.quadHeading.par.Engine4tox = parent.nodeo.par.Defaulttox
 		self.myOp.par.Engine4now = 'blank.tox'
 		self.timer.par.start.pulse()
 
@@ -563,8 +563,8 @@ class Engineer:
 		if parName != 'Mov':
 			setattr(self.engineMov.par, '{}'.format(parName), str(parVal))
 		else:
-			val = project.folder + '/' + parent.Nodeo.par.Mov \
-			if not ':' in str(parent.Nodeo.par.Mov) else parent.Nodeo.par.Mov
+			val = project.folder + '/' + parent.nodeo.par.Mov \
+			if not ':' in str(parent.nodeo.par.Mov) else parent.nodeo.par.Mov
 			setattr(self.engineMov.par, '{}'.format(parName), val)
 
 	def Bug(self, par):

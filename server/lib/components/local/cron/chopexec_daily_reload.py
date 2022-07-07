@@ -23,7 +23,7 @@ def onValueChange(channel, sampleIndex, val, prev):
 	# midnight refresh for engine that's not playing
 	if channel.name == 'hour' and val == 0:
 		engineToReload = (1 - op.Engineer.par.Abba) + 1
-		parent.Nodeo.ReloadEngine(engineToReload)
+		parent.nodeo.ReloadEngine(engineToReload)
 
 		print('Reloaded Engine ', engineToReload)
 
@@ -32,7 +32,7 @@ def onValueChange(channel, sampleIndex, val, prev):
 		secondsRemaining = (1.0 - progress) * segmentInterval
 		reloadOtherIn = secondsRemaining + op.Engineer.fetch('trans_interval') + 3 # add 3 to be safe
 
-		reloadOtherEngine = 'parent.Nodeo.ReloadEngine({} + 1)'.format(op.Engineer.par.Abba)
+		reloadOtherEngine = 'parent.nodeo.ReloadEngine({} + 1)'.format(op.Engineer.par.Abba)
 		run(reloadOtherEngine, delayFrames = reloadOtherIn * me.time.rate)
 
 		printSecond = "print('Reloaded Engine ', {}".format(op.Engineer.par.Abba + 1)

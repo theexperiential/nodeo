@@ -214,7 +214,7 @@ class PlaylisterExt:
 			run("op('{}').lock = False".format(self.active), delayFrames=10)
 
 		# switch playlist input table
-		self.playlist.par.file = parent.Nodeo.par.Settings + '/playlists/' + self.Playlists[self.myOp.par.Selectedplaylist + 1, 'label'] + '.py'
+		self.playlist.par.file = parent.nodeo.par.Settings + '/playlists/' + self.Playlists[self.myOp.par.Selectedplaylist + 1, 'label'] + '.py'
 		# check if playlist file doesn't exist
 		if not self.CheckIfPlaylistFileExists(self.Playlists[self.myOp.par.Selectedplaylist + 1, 'label']) and event != 'rename':
 			self.FinishResettingPlaylist()
